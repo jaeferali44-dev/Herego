@@ -1,6 +1,9 @@
 # Environment Configuration Example
 # Copy these variables into your Cloudflare or hosting environment variables settings
 
+PORT=3000
+NODE_ENV=production
+APP_URL="https://exploreethiopiatourandtravel.com.et"
 GEMINI_API_KEY=
 JWT_SECRET=
 TELEGRAM_BOT_TOKEN=
@@ -8,3 +11,4 @@ TELEGRAM_CHAT_ID=
 ADMIN_USERNAME=
 ADMIN_PASSWORD_HASH=
 CORS_ORIGIN=
+
