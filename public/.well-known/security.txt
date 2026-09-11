@@ -1,0 +1,6 @@
+Contact: mailto:tibebuablsh@gmail.com
+Contact: tel:+251923270659
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, am
+Canonical: https://exploreethiopiatourandtravel.com.et/.well-known/security.txt
+Policy: https://exploreethiopiatourandtravel.com.et/privacy-policy

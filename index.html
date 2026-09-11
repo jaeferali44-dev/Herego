@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preconnect & Preload Fonts with display=swap to Prevent White Screen -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+    
+    <style>
+      /* Smooth font transition once loaded */
+      html.fonts-loaded body {
+        transition: opacity 0.2s ease-in-out;
+      }
+    </style>
+
+    <script>
+      (function() {
+        document.documentElement.classList.add('fonts-loading');
+        
+        if ('fonts' in document) {
+          var timeout = setTimeout(function() {
+            document.documentElement.classList.remove('fonts-loading');
+            document.documentElement.classList.add('fonts-loaded');
+          }, 500);
+
+          Promise.all([
+            document.fonts.load('400 1em "Plus Jakarta Sans"'),
+            document.fonts.load('600 1em "Plus Jakarta Sans"'),
+            document.fonts.load('700 1em "Plus Jakarta Sans"'),
+            document.fonts.load('400 1em "Playfair Display"'),
+            document.fonts.ready
+          ]).then(function() {
+            clearTimeout(timeout);
+            document.documentElement.classList.remove('fonts-loading');
+            document.documentElement.classList.add('fonts-loaded');
+          }).catch(function() {
+            clearTimeout(timeout);
+            document.documentElement.classList.remove('fonts-loading');
+            document.documentElement.classList.add('fonts-loaded');
+          });
+        } else {
+          document.documentElement.classList.remove('fonts-loading');
+          document.documentElement.classList.add('fonts-loaded');
+        }
+      })();
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    
+    <!-- SEO Optimization: Primary Title & Description -->
+    <title>Explore Ethiopia Tour and Travel | Premium Ethiopia Tours, Adventures &amp; Travel Experiences</title>
+    <meta name="description" content="Experience premium custom travel, nature, &amp; culture in Ethiopia. Book unique adventures with Explore Ethiopia Tour and Travel. Kenya tours available." />
+    <meta name="keywords" content="Ethiopia tours, Ethiopia travel, Explore Ethiopia, Ethiopia adventure, Lalibela tours, Simien Mountains, Harar, Dallol, Erta Ale, Bale Mountains, Lake Langano, Wenchi Crater, Kenya tours, East Africa travel, Custom tours Ethiopia, Explore Ethiopia Tour and Travel" />
+    <meta name="author" content="Explore Ethiopia Tour and Travel" />
+    
+    <!-- Technical SEO: Canonical URL -->
+    <link rel="canonical" href="https://exploreethiopiatourandtravel.com.et" />
+    <meta name="theme-color" content="#0B0C10" />
+
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn, WhatsApp, Telegram, Instagram) -->
+    <meta property="og:title" content="Explore Ethiopia Tour and Travel | Premium Ethiopia Tours, Adventures &amp; Travel Experiences" />
+    <meta property="og:description" content="Experience premium custom travel, nature, &amp; culture in Ethiopia. Book unique adventures with Explore Ethiopia Tour and Travel. Kenya tours available." />
+    <meta property="og:url" content="https://exploreethiopiatourandtravel.com.et" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Explore Ethiopia Tour and Travel" />
+    <meta property="og:image" content="/logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+
+    <!-- Twitter/X Cards Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Explore Ethiopia Tour and Travel | Premium Ethiopia Tours, Adventures &amp; Travel Experiences" />
+    <meta name="twitter:description" content="Experience premium custom travel, nature, &amp; culture in Ethiopia. Book unique adventures with Explore Ethiopia Tour and Travel. Kenya tours available." />
+    <meta name="twitter:image" content="/logo.png" />
+
+    <!-- Automatic Domain Origin Dynamic Adapter -->
+    <script>
+      (function() {
+        var origin = window.location.origin;
+        if (!origin) return;
+        var ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.setAttribute('content', origin + window.location.pathname);
+        var ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage) ogImage.setAttribute('content', origin + '/logo.png');
+        var twitterImage = document.querySelector('meta[name="twitter:image"]');
+        if (twitterImage) twitterImage.setAttribute('content', origin + '/logo.png');
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.setAttribute('href', origin + window.location.pathname);
+
+        // Update JSON-LD structured data dynamically
+        window.addEventListener('DOMContentLoaded', function() {
+          try {
+            var scripts = document.querySelectorAll('script[type="application/ld+json"]');
+            scripts.forEach(function(s) {
+              var text = s.textContent;
+              if (text && text.includes('TravelAgency')) {
+                var data = JSON.parse(text);
+                data.url = origin;
+                data.logo = origin + '/logo.png';
+                s.textContent = JSON.stringify(data, null, 2);
+              }
+            });
+          } catch(e) {}
+        });
+      })();
+    </script>
+
+
+    <!-- Structured Data (Schema.org JSON-LD) for Travel Agency -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Explore Ethiopia Tour and Travel",
+      "alternateName": "Explore Ethiopia Tour and Travel",
+      "description": "Premium custom travel, culture, and nature adventure experiences in Ethiopia & Kenya. Explore Ethiopia Tour and Travel.",
+      "url": "https://exploreethiopiatourandtravel.com.et",
+      "telephone": "+251923270659",
+      "email": "tibebuablsh@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bole Sub City",
+        "addressLocality": "Addis Ababa",
+        "addressCountry": "ET"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+251923270659",
+          "contactType": "customer service",
+          "areaServed": ["ET", "KE"],
+          "availableLanguage": ["English", "Amharic"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+251911467471",
+          "contactType": "bookings",
+          "areaServed": ["ET", "KE"],
+          "availableLanguage": ["English", "Amharic"]
+        }
+      ],
+      "sameAs": [
+        "https://instagram.com/exploreethiopia_travel",
+        "https://tiktok.com/@exploreethiopiatravel",
+        "https://facebook.com/exploreethiopiatravel"
+      ],
+      "areaServed": ["Ethiopia", "Kenya", "East Africa"],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
